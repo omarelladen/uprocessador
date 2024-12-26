@@ -1,0 +1,55 @@
+[*]
+[*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
+[*] Wed Nov 27 21:57:40 2024
+[*]
+[dumpfile] "/home/omar/Desktop/uP/up-Lab5/tb.ghw"
+[dumpfile_mtime] "Wed Nov 27 21:33:59 2024"
+[dumpfile_size] 19177
+[savefile] "/home/omar/Desktop/uP/up-Lab5/tb/ondas.gtkw"
+[timestart] 1212600000
+[size] 1920 993
+[pos] -1950 -342
+*-26.099998 1242000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tb.
+[treeopen] top.tb.uut.
+[treeopen] top.tb.uut.instr_reg.
+[treeopen] top.tb.uut.pc_c.
+[treeopen] top.tb.uut.rom_c.
+[treeopen] top.tb.uut.uc_c.
+[sst_width] 240
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 645
+@28
+top.tb.clk
+#{top.tb.uut.uc_c.state[1:0]} top.tb.uut.uc_c.state[1] top.tb.uut.uc_c.state[0]
+#{top.tb.uut.rom_c.endereco[11:0]} top.tb.uut.rom_c.endereco[11] top.tb.uut.rom_c.endereco[10] top.tb.uut.rom_c.endereco[9] top.tb.uut.rom_c.endereco[8] top.tb.uut.rom_c.endereco[7] top.tb.uut.rom_c.endereco[6] top.tb.uut.rom_c.endereco[5] top.tb.uut.rom_c.endereco[4] top.tb.uut.rom_c.endereco[3] top.tb.uut.rom_c.endereco[2] top.tb.uut.rom_c.endereco[1] top.tb.uut.rom_c.endereco[0]
+#{top.tb.uut.rom_c.rom_out[18:0]} top.tb.uut.rom_c.rom_out[18] top.tb.uut.rom_c.rom_out[17] top.tb.uut.rom_c.rom_out[16] top.tb.uut.rom_c.rom_out[15] top.tb.uut.rom_c.rom_out[14] top.tb.uut.rom_c.rom_out[13] top.tb.uut.rom_c.rom_out[12] top.tb.uut.rom_c.rom_out[11] top.tb.uut.rom_c.rom_out[10] top.tb.uut.rom_c.rom_out[9] top.tb.uut.rom_c.rom_out[8] top.tb.uut.rom_c.rom_out[7] top.tb.uut.rom_c.rom_out[6] top.tb.uut.rom_c.rom_out[5] top.tb.uut.rom_c.rom_out[4] top.tb.uut.rom_c.rom_out[3] top.tb.uut.rom_c.rom_out[2] top.tb.uut.rom_c.rom_out[1] top.tb.uut.rom_c.rom_out[0]
+#{top.tb.uut.instr_reg.registro[18:0]} top.tb.uut.instr_reg.registro[18] top.tb.uut.instr_reg.registro[17] top.tb.uut.instr_reg.registro[16] top.tb.uut.instr_reg.registro[15] top.tb.uut.instr_reg.registro[14] top.tb.uut.instr_reg.registro[13] top.tb.uut.instr_reg.registro[12] top.tb.uut.instr_reg.registro[11] top.tb.uut.instr_reg.registro[10] top.tb.uut.instr_reg.registro[9] top.tb.uut.instr_reg.registro[8] top.tb.uut.instr_reg.registro[7] top.tb.uut.instr_reg.registro[6] top.tb.uut.instr_reg.registro[5] top.tb.uut.instr_reg.registro[4] top.tb.uut.instr_reg.registro[3] top.tb.uut.instr_reg.registro[2] top.tb.uut.instr_reg.registro[1] top.tb.uut.instr_reg.registro[0]
+@29
+top.tb.uut.uc_c.irwrite
+@28
+#{top.tb.uut.regfile.reg_r0[2:0]} top.tb.uut.regfile.reg_r0[2] top.tb.uut.regfile.reg_r0[1] top.tb.uut.regfile.reg_r0[0]
+#{top.tb.uut.regfile.reg_r1[2:0]} top.tb.uut.regfile.reg_r1[2] top.tb.uut.regfile.reg_r1[1] top.tb.uut.regfile.reg_r1[0]
+@22
+#{top.tb.uut.regfile.data_wr[15:0]} top.tb.uut.regfile.data_wr[15] top.tb.uut.regfile.data_wr[14] top.tb.uut.regfile.data_wr[13] top.tb.uut.regfile.data_wr[12] top.tb.uut.regfile.data_wr[11] top.tb.uut.regfile.data_wr[10] top.tb.uut.regfile.data_wr[9] top.tb.uut.regfile.data_wr[8] top.tb.uut.regfile.data_wr[7] top.tb.uut.regfile.data_wr[6] top.tb.uut.regfile.data_wr[5] top.tb.uut.regfile.data_wr[4] top.tb.uut.regfile.data_wr[3] top.tb.uut.regfile.data_wr[2] top.tb.uut.regfile.data_wr[1] top.tb.uut.regfile.data_wr[0]
+@28
+top.tb.uut.uc_c.regwrite
+@22
+#{top.tb.uut.regfile.r0_data[15:0]} top.tb.uut.regfile.r0_data[15] top.tb.uut.regfile.r0_data[14] top.tb.uut.regfile.r0_data[13] top.tb.uut.regfile.r0_data[12] top.tb.uut.regfile.r0_data[11] top.tb.uut.regfile.r0_data[10] top.tb.uut.regfile.r0_data[9] top.tb.uut.regfile.r0_data[8] top.tb.uut.regfile.r0_data[7] top.tb.uut.regfile.r0_data[6] top.tb.uut.regfile.r0_data[5] top.tb.uut.regfile.r0_data[4] top.tb.uut.regfile.r0_data[3] top.tb.uut.regfile.r0_data[2] top.tb.uut.regfile.r0_data[1] top.tb.uut.regfile.r0_data[0]
+#{top.tb.uut.regfile.r1_data[15:0]} top.tb.uut.regfile.r1_data[15] top.tb.uut.regfile.r1_data[14] top.tb.uut.regfile.r1_data[13] top.tb.uut.regfile.r1_data[12] top.tb.uut.regfile.r1_data[11] top.tb.uut.regfile.r1_data[10] top.tb.uut.regfile.r1_data[9] top.tb.uut.regfile.r1_data[8] top.tb.uut.regfile.r1_data[7] top.tb.uut.regfile.r1_data[6] top.tb.uut.regfile.r1_data[5] top.tb.uut.regfile.r1_data[4] top.tb.uut.regfile.r1_data[3] top.tb.uut.regfile.r1_data[2] top.tb.uut.regfile.r1_data[1] top.tb.uut.regfile.r1_data[0]
+#{top.tb.uut.regfile.r2_data[15:0]} top.tb.uut.regfile.r2_data[15] top.tb.uut.regfile.r2_data[14] top.tb.uut.regfile.r2_data[13] top.tb.uut.regfile.r2_data[12] top.tb.uut.regfile.r2_data[11] top.tb.uut.regfile.r2_data[10] top.tb.uut.regfile.r2_data[9] top.tb.uut.regfile.r2_data[8] top.tb.uut.regfile.r2_data[7] top.tb.uut.regfile.r2_data[6] top.tb.uut.regfile.r2_data[5] top.tb.uut.regfile.r2_data[4] top.tb.uut.regfile.r2_data[3] top.tb.uut.regfile.r2_data[2] top.tb.uut.regfile.r2_data[1] top.tb.uut.regfile.r2_data[0]
+#{top.tb.uut.regfile.r3_data[15:0]} top.tb.uut.regfile.r3_data[15] top.tb.uut.regfile.r3_data[14] top.tb.uut.regfile.r3_data[13] top.tb.uut.regfile.r3_data[12] top.tb.uut.regfile.r3_data[11] top.tb.uut.regfile.r3_data[10] top.tb.uut.regfile.r3_data[9] top.tb.uut.regfile.r3_data[8] top.tb.uut.regfile.r3_data[7] top.tb.uut.regfile.r3_data[6] top.tb.uut.regfile.r3_data[5] top.tb.uut.regfile.r3_data[4] top.tb.uut.regfile.r3_data[3] top.tb.uut.regfile.r3_data[2] top.tb.uut.regfile.r3_data[1] top.tb.uut.regfile.r3_data[0]
+#{top.tb.uut.regfile.r4_data[15:0]} top.tb.uut.regfile.r4_data[15] top.tb.uut.regfile.r4_data[14] top.tb.uut.regfile.r4_data[13] top.tb.uut.regfile.r4_data[12] top.tb.uut.regfile.r4_data[11] top.tb.uut.regfile.r4_data[10] top.tb.uut.regfile.r4_data[9] top.tb.uut.regfile.r4_data[8] top.tb.uut.regfile.r4_data[7] top.tb.uut.regfile.r4_data[6] top.tb.uut.regfile.r4_data[5] top.tb.uut.regfile.r4_data[4] top.tb.uut.regfile.r4_data[3] top.tb.uut.regfile.r4_data[2] top.tb.uut.regfile.r4_data[1] top.tb.uut.regfile.r4_data[0]
+@28
+#{top.tb.uut.uc_c.opcode_s[3:0]} top.tb.uut.uc_c.opcode_s[3] top.tb.uut.uc_c.opcode_s[2] top.tb.uut.uc_c.opcode_s[1] top.tb.uut.uc_c.opcode_s[0]
+top.tb.uut.uc_c.jump_en
+top.tb.uut.pc_wr_s
+#{top.tb.uut.pc_c.data_out[11:0]} top.tb.uut.pc_c.data_out[11] top.tb.uut.pc_c.data_out[10] top.tb.uut.pc_c.data_out[9] top.tb.uut.pc_c.data_out[8] top.tb.uut.pc_c.data_out[7] top.tb.uut.pc_c.data_out[6] top.tb.uut.pc_c.data_out[5] top.tb.uut.pc_c.data_out[4] top.tb.uut.pc_c.data_out[3] top.tb.uut.pc_c.data_out[2] top.tb.uut.pc_c.data_out[1] top.tb.uut.pc_c.data_out[0]
+@24
+#{top.tb.uut.cont_s[11:0]} top.tb.uut.cont_s[11] top.tb.uut.cont_s[10] top.tb.uut.cont_s[9] top.tb.uut.cont_s[8] top.tb.uut.cont_s[7] top.tb.uut.cont_s[6] top.tb.uut.cont_s[5] top.tb.uut.cont_s[4] top.tb.uut.cont_s[3] top.tb.uut.cont_s[2] top.tb.uut.cont_s[1] top.tb.uut.cont_s[0]
+@28
+#{top.tb.uut.ir_out_s[18:0]} top.tb.uut.ir_out_s[18] top.tb.uut.ir_out_s[17] top.tb.uut.ir_out_s[16] top.tb.uut.ir_out_s[15] top.tb.uut.ir_out_s[14] top.tb.uut.ir_out_s[13] top.tb.uut.ir_out_s[12] top.tb.uut.ir_out_s[11] top.tb.uut.ir_out_s[10] top.tb.uut.ir_out_s[9] top.tb.uut.ir_out_s[8] top.tb.uut.ir_out_s[7] top.tb.uut.ir_out_s[6] top.tb.uut.ir_out_s[5] top.tb.uut.ir_out_s[4] top.tb.uut.ir_out_s[3] top.tb.uut.ir_out_s[2] top.tb.uut.ir_out_s[1] top.tb.uut.ir_out_s[0]
+[pattern_trace] 1
+[pattern_trace] 0

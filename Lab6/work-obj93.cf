@@ -1,0 +1,31 @@
+v 4
+file . "tb/tb.vhd" "261e0d64c522382e6a48ed446be161aa2a24af33" "20241211234140.805":
+  entity tb at 1( 0) + 0 on 49;
+  architecture a_tb of tb at 9( 90) + 0 on 50;
+file . "src/ROM.vhd" "316dae515e0a088c0e7e4a6e7091a7249d1d2faf" "20241211234140.797":
+  entity rom at 1( 0) + 0 on 31;
+  architecture a_rom of rom at 11( 203) + 0 on 32;
+file . "src/UC.vhd" "3f8d7271608d634d34eb8a62c5a0613fb59ad379" "20241211234140.798":
+  entity uc at 1( 0) + 0 on 33;
+  architecture a_uc of uc at 17( 451) + 0 on 34;
+file . "src/ULA.vhd" "928fc4f1826963cbe95ff86a10402209820af392" "20241211234140.798":
+  entity ula at 1( 0) + 0 on 35;
+  architecture a_ula of ula at 16( 282) + 0 on 36;
+file . "src/main.vhd" "490a27705ad2d59e1eb325937dd1f563dec91c3e" "20241211234140.799":
+  entity main at 1( 0) + 0 on 37;
+  architecture a_main of main at 14( 186) + 0 on 38;
+file . "src/mux16.vhd" "71a06a22c0fd531defb2ee6a393ce016236069e9" "20241211234140.799":
+  entity mux16 at 1( 0) + 0 on 39;
+  architecture a_mux16 of mux16 at 14( 273) + 0 on 40;
+file . "src/reg12bits.vhd" "580d5bb1138be41961ee703c72a1a408c83c034d" "20241211234140.799":
+  entity reg12bits at 1( 0) + 0 on 41;
+  architecture a_reg12bits of reg12bits at 13( 249) + 0 on 42;
+file . "src/reg16bits.vhd" "65ea09d41e4c0f2e1a4d593515e4bbf4f0bfffb7" "20241211234140.799":
+  entity reg16bits at 1( 0) + 0 on 43;
+  architecture a_reg16bits of reg16bits at 13( 249) + 0 on 44;
+file . "src/reg19bits.vhd" "52f1b514e2b688b1259fdb75e8eb60b67b5a1ea5" "20241211234140.800":
+  entity reg19bits at 1( 0) + 0 on 45;
+  architecture a_reg19bits of reg19bits at 13( 249) + 0 on 46;
+file . "src/registerFile.vhd" "93f5eaabe5459275697410f116bb06cde81115bd" "20241211234140.800":
+  entity registerfile at 1( 0) + 0 on 47;
+  architecture a_registerfile of registerfile at 14( 317) + 0 on 48;

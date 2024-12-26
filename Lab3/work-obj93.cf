@@ -1,0 +1,19 @@
+v 4
+file . "tb/tb.vhd" "cba4fe3ca7c933089f872859f4ffb5e5fd07b7de" "20241111002107.391":
+  entity tb at 1( 0) + 0 on 227;
+  architecture a_tb of tb at 9( 90) + 0 on 228;
+file . "src/ULA.vhd" "87fe725efc42c28b42322ad6380ca235260074dd" "20241111002107.383":
+  entity ula at 1( 0) + 0 on 217;
+  architecture a_ula of ula at 16( 282) + 0 on 218;
+file . "src/mux16.vhd" "71a06a22c0fd531defb2ee6a393ce016236069e9" "20241111002107.384":
+  entity mux16 at 1( 0) + 0 on 221;
+  architecture a_mux16 of mux16 at 14( 273) + 0 on 222;
+file . "src/main.vhd" "4b3ed0819dd0aa2e9ceb563b3c20c70de3f3876a" "20241111002107.384":
+  entity main at 1( 0) + 0 on 219;
+  architecture a_main of main at 17( 377) + 0 on 220;
+file . "src/reg16bits.vhd" "732a8c3a84be05059fa8017c2b6da1b9e3de1c71" "20241111002107.385":
+  entity reg16bits at 1( 0) + 0 on 223;
+  architecture a_reg16bits of reg16bits at 16( 310) + 0 on 224;
+file . "src/registerFile.vhd" "bb16e29a3798c44591bb3d8507aabf6708c629c0" "20241111002107.385":
+  entity registerfile at 1( 0) + 0 on 225;
+  architecture a_registerfile of registerfile at 15( 315) + 0 on 226;

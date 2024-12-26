@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed Nov 20 19:54:59 2024
+[*]
+[dumpfile] "/home/omar/uP/uP-Lab4-pt2/tb.ghw"
+[dumpfile_mtime] "Wed Nov 20 19:48:24 2024"
+[dumpfile_size] 8859
+[savefile] "/home/omar/uP/uP-Lab4-pt2/tb/ondas.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1532 -84
+*-28.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.tb.
+[treeopen] top.tb.uut.
+[treeopen] top.tb.uut.pc_c.
+[treeopen] top.tb.uut.uc_c.
+[sst_width] 214
+[signals_width] 142
+[sst_expanded] 1
+[sst_vpaned_height] 151
+@29
+top.tb.rst
+@28
+top.tb.clk
+top.tb.uut.state_s
+@22
+#{top.tb.uut.pc_c.registro[11:0]} top.tb.uut.pc_c.registro[11] top.tb.uut.pc_c.registro[10] top.tb.uut.pc_c.registro[9] top.tb.uut.pc_c.registro[8] top.tb.uut.pc_c.registro[7] top.tb.uut.pc_c.registro[6] top.tb.uut.pc_c.registro[5] top.tb.uut.pc_c.registro[4] top.tb.uut.pc_c.registro[3] top.tb.uut.pc_c.registro[2] top.tb.uut.pc_c.registro[1] top.tb.uut.pc_c.registro[0]
+#{top.tb.uut.dado_s[18:0]} top.tb.uut.dado_s[18] top.tb.uut.dado_s[17] top.tb.uut.dado_s[16] top.tb.uut.dado_s[15] top.tb.uut.dado_s[14] top.tb.uut.dado_s[13] top.tb.uut.dado_s[12] top.tb.uut.dado_s[11] top.tb.uut.dado_s[10] top.tb.uut.dado_s[9] top.tb.uut.dado_s[8] top.tb.uut.dado_s[7] top.tb.uut.dado_s[6] top.tb.uut.dado_s[5] top.tb.uut.dado_s[4] top.tb.uut.dado_s[3] top.tb.uut.dado_s[2] top.tb.uut.dado_s[1] top.tb.uut.dado_s[0]
+[pattern_trace] 1
+[pattern_trace] 0
