@@ -27,8 +27,8 @@ begin
         if rst='1' then 
             state_s <= "00";
         elsif(rising_edge(clk)) then ---limitar tamanho do jump
-            if(state_s = "11" or (state_s="10" and opcode_s="0011") or (state_s="11" and opcode_s="0010")) or (state_s="10" and opcode_s="0001") then --dps mudar maximo n de estados (5 (000-100)) --reseta antes do max de estados dependendo da instr
-                state_s <= "00";  --ld                                  --add                                 --jump
+            if(state_s = "11" or (state_s="10" and opcode_s="0011" and funct_s="001") or (state_s="11" and opcode_s="0010")) or (state_s="10" and opcode_s="0001") then --dps mudar maximo n de estados (5 (000-100)) --reseta antes do max de estados dependendo da instr E COLOCAR EXPLICITAMENTE TODOS OS Q VAO ATE 11 SO
+                state_s <= "00";  --ld                                                    --R                                    --jump
             else
                 state_s <= state_s + 1;
             end if;
@@ -66,7 +66,8 @@ begin
 
     -- sel do mux para write data do reg file
     memtoreg <= '0' when opcode_s="0010" else -- R
-                '1' when opcode_s="0011" else --ld
+                '1' when opcode_s="0011" and funct_s="001" else --ld
+                '0' when opcode_s="0011" else --addi, cmpi
                 '0'; -- explicito
 
     regzero <= '0' when (opcode_s="0010" and funct_s="010") else --ld

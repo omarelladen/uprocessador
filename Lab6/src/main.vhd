@@ -183,9 +183,11 @@ begin
 
     -------------------- TROCAR NOME --------------------
     --entrada do pc (end)(apesar de se chamar jump_EN, é basicamente um mux)
-    pc_in_s <= (aluout_s + pc_out_s-1) when pcsource_s="10" else -- branch
+
+    -- adicionei: aluout_s(11 downto 0). era isso msm q faltava? trocar pc logo pra 16b??????????????????????????????????????????? 
+    pc_in_s <= (aluout_s(11 downto 0) + pc_out_s -1) when pcsource_s="10" else -- branch
                (ir_out_s(11 downto 0)) when pcsource_s="01" else -- jump
-               (pc_out_s + 1); -- when pcsource_s="00"           -- cont normal
+               (pc_out_s +1); -- when pcsource_s="00"           -- cont normal
 
     data_wr_s <= aluout_s when memtoreg_s='0' else -- res da ula no reg ulaout
                 "0000000" & (ir_out_s(8 downto 0)) when memtoreg_s='1' and ir_out_s(8)='0' else -- cte da instr ld com 0 estendido

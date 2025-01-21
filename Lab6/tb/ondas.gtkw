@@ -1,14 +1,14 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Wed Nov 27 21:57:40 2024
+[*] Tue Jan 21 00:17:47 2025
 [*]
-[dumpfile] "/home/omar/Desktop/uP/up-Lab5/tb.ghw"
-[dumpfile_mtime] "Wed Nov 27 21:33:59 2024"
-[dumpfile_size] 19177
-[savefile] "/home/omar/Desktop/uP/up-Lab5/tb/ondas.gtkw"
-[timestart] 1212600000
+[dumpfile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/Lab6/tb.ghw"
+[dumpfile_mtime] "Tue Jan 21 00:17:16 2025"
+[dumpfile_size] 13053
+[savefile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/Lab6/tb/ondas.gtkw"
+[timestart] 592900000
 [size] 1920 993
-[pos] -1950 -342
+[pos] -51 -51
 *-26.099998 1242000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.tb.
@@ -44,12 +44,8 @@ top.tb.uut.uc_c.regwrite
 #{top.tb.uut.regfile.r4_data[15:0]} top.tb.uut.regfile.r4_data[15] top.tb.uut.regfile.r4_data[14] top.tb.uut.regfile.r4_data[13] top.tb.uut.regfile.r4_data[12] top.tb.uut.regfile.r4_data[11] top.tb.uut.regfile.r4_data[10] top.tb.uut.regfile.r4_data[9] top.tb.uut.regfile.r4_data[8] top.tb.uut.regfile.r4_data[7] top.tb.uut.regfile.r4_data[6] top.tb.uut.regfile.r4_data[5] top.tb.uut.regfile.r4_data[4] top.tb.uut.regfile.r4_data[3] top.tb.uut.regfile.r4_data[2] top.tb.uut.regfile.r4_data[1] top.tb.uut.regfile.r4_data[0]
 @28
 #{top.tb.uut.uc_c.opcode_s[3:0]} top.tb.uut.uc_c.opcode_s[3] top.tb.uut.uc_c.opcode_s[2] top.tb.uut.uc_c.opcode_s[1] top.tb.uut.uc_c.opcode_s[0]
-top.tb.uut.uc_c.jump_en
 top.tb.uut.pc_wr_s
 #{top.tb.uut.pc_c.data_out[11:0]} top.tb.uut.pc_c.data_out[11] top.tb.uut.pc_c.data_out[10] top.tb.uut.pc_c.data_out[9] top.tb.uut.pc_c.data_out[8] top.tb.uut.pc_c.data_out[7] top.tb.uut.pc_c.data_out[6] top.tb.uut.pc_c.data_out[5] top.tb.uut.pc_c.data_out[4] top.tb.uut.pc_c.data_out[3] top.tb.uut.pc_c.data_out[2] top.tb.uut.pc_c.data_out[1] top.tb.uut.pc_c.data_out[0]
-@24
-#{top.tb.uut.cont_s[11:0]} top.tb.uut.cont_s[11] top.tb.uut.cont_s[10] top.tb.uut.cont_s[9] top.tb.uut.cont_s[8] top.tb.uut.cont_s[7] top.tb.uut.cont_s[6] top.tb.uut.cont_s[5] top.tb.uut.cont_s[4] top.tb.uut.cont_s[3] top.tb.uut.cont_s[2] top.tb.uut.cont_s[1] top.tb.uut.cont_s[0]
-@28
 #{top.tb.uut.ir_out_s[18:0]} top.tb.uut.ir_out_s[18] top.tb.uut.ir_out_s[17] top.tb.uut.ir_out_s[16] top.tb.uut.ir_out_s[15] top.tb.uut.ir_out_s[14] top.tb.uut.ir_out_s[13] top.tb.uut.ir_out_s[12] top.tb.uut.ir_out_s[11] top.tb.uut.ir_out_s[10] top.tb.uut.ir_out_s[9] top.tb.uut.ir_out_s[8] top.tb.uut.ir_out_s[7] top.tb.uut.ir_out_s[6] top.tb.uut.ir_out_s[5] top.tb.uut.ir_out_s[4] top.tb.uut.ir_out_s[3] top.tb.uut.ir_out_s[2] top.tb.uut.ir_out_s[1] top.tb.uut.ir_out_s[0]
 [pattern_trace] 1
 [pattern_trace] 0

@@ -14,8 +14,8 @@ end entity;
 architecture a_mux16 of mux16 is
 begin
     mux_out <= entr0 when sel = "00" else
-              entr1 when sel = "01" else
-              entr2 when sel = "10" else
-              entr3 when sel = "11" else
-              "0000000000000000"; 
+               entr1 when sel = "01" else
+               entr2 when sel = "10" else
+               entr3 when sel = "11" else
+               "0000000000000000"; 
 end architecture;
