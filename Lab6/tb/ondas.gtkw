@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Wed Jan 22 00:41:00 2025
+[*] Tue Jan 28 20:26:35 2025
 [*]
 [dumpfile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/uprocessador_git/Lab6/tb.ghw"
-[dumpfile_mtime] "Tue Jan 21 23:52:17 2025"
+[dumpfile_mtime] "Tue Jan 28 20:21:29 2025"
 [dumpfile_size] 12869
 [savefile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/uprocessador_git/Lab6/tb/ondas.gtkw"
-[timestart] 668000000
-[size] 1920 993
-[pos] -30 -30
-*-27.830366 985000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 1437000000
+[size] 973 993
+[pos] -1950 -342
+*-27.830366 1675000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.tb.
 [treeopen] top.tb.uut.
@@ -21,7 +21,7 @@
 [sst_width] 240
 [signals_width] 230
 [sst_expanded] 1
-[sst_vpaned_height] 620
+[sst_vpaned_height] 621
 @28
 top.tb.clk
 #{top.tb.uut.uc_c.state[1:0]} top.tb.uut.uc_c.state[1] top.tb.uut.uc_c.state[0]
@@ -61,7 +61,8 @@ top.tb.uut.n_reg_s
 top.tb.uut.ula_c.v
 top.tb.uut.v_reg_s
 top.tb.uut.uc_c.flag_cond_s
-@29
 top.tb.uut.uc_c.pcwrcond_s
+@29
+#{top.tb.uut.reg_r0_s[2:0]} top.tb.uut.reg_r0_s[2] top.tb.uut.reg_r0_s[1] top.tb.uut.reg_r0_s[0]
 [pattern_trace] 1
 [pattern_trace] 0

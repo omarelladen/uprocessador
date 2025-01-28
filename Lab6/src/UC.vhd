@@ -95,8 +95,8 @@ begin
                 '1' when opcode_s="0010" and funct_s="001" and state_s="11" else --sub
                 '1' when opcode_s="0011" and funct_s="000" and state_s="10" else --addi
                 '1' when opcode_s="0011" and funct_s="001" and state_s="10" else --ld
+                '1' when opcode_s="0010" and funct_s="010" and state_s="11" else --mv
                 '0';-- dps nos load pd ter o write no 4o estado
-                ------------------MV??????????????
 
     pcsource <= "10" when (opcode_s="0100" and state_s="10") else -- branch ------------------------ se n atender cond da branch o pc vai deixar de avancar??
                 "01" when (opcode_s="0001" and state_s/="00") else -- jump

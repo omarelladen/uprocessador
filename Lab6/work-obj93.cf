@@ -1,0 +1,34 @@
+v 4
+file . "tb/tb.vhd" "261e0d64c522382e6a48ed446be161aa2a24af33" "20250128203454.719":
+  entity tb at 1( 0) + 0 on 53;
+  architecture a_tb of tb at 9( 90) + 0 on 54;
+file . "src/ROM.vhd" "2d7d7383cab34561e5f2c913a1c0f1a90e3ff425" "20250128203454.711":
+  entity rom at 1( 0) + 0 on 33;
+  architecture a_rom of rom at 11( 203) + 0 on 34;
+file . "src/UC.vhd" "ea5063076ddc8c068f101b90f4be722cec9f5d32" "20250128203454.711":
+  entity uc at 1( 0) + 0 on 35;
+  architecture a_uc of uc at 19( 488) + 0 on 36;
+file . "src/ULA.vhd" "928fc4f1826963cbe95ff86a10402209820af392" "20250128203454.712":
+  entity ula at 1( 0) + 0 on 37;
+  architecture a_ula of ula at 16( 282) + 0 on 38;
+file . "src/main.vhd" "5994edd7718dc104662a4a7c628739b2f5041526" "20250128203454.712":
+  entity main at 1( 0) + 0 on 39;
+  architecture a_main of main at 13( 177) + 0 on 40;
+file . "src/mux16.vhd" "aab68b366086eba1e5aad86aee1f757867d107d9" "20250128203454.712":
+  entity mux16 at 1( 0) + 0 on 41;
+  architecture a_mux16 of mux16 at 14( 273) + 0 on 42;
+file . "src/reg12bits.vhd" "580d5bb1138be41961ee703c72a1a408c83c034d" "20250128203454.712":
+  entity reg12bits at 1( 0) + 0 on 43;
+  architecture a_reg12bits of reg12bits at 13( 249) + 0 on 44;
+file . "src/reg16bits.vhd" "65ea09d41e4c0f2e1a4d593515e4bbf4f0bfffb7" "20250128203454.712":
+  entity reg16bits at 1( 0) + 0 on 45;
+  architecture a_reg16bits of reg16bits at 13( 249) + 0 on 46;
+file . "src/reg19bits.vhd" "52f1b514e2b688b1259fdb75e8eb60b67b5a1ea5" "20250128203454.713":
+  entity reg19bits at 1( 0) + 0 on 47;
+  architecture a_reg19bits of reg19bits at 13( 249) + 0 on 48;
+file . "src/reg1bit.vhd" "a7f79ef5290752b6978b82479e7e23aa5b23cce5" "20250128203454.713":
+  entity reg1bit at 1( 0) + 0 on 49;
+  architecture a_reg1bit of reg1bit at 13( 223) + 0 on 50;
+file . "src/registerFile.vhd" "93f5eaabe5459275697410f116bb06cde81115bd" "20250128203454.713":
+  entity registerfile at 1( 0) + 0 on 51;
+  architecture a_registerfile of registerfile at 14( 317) + 0 on 52;
