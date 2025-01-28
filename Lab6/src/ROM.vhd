@@ -16,11 +16,11 @@ architecture a_ROM of ROM is
       2 => B"0010_000_011_010_000000", --add r3, r2 (C)
       3 => B"0011_000_010_000000101",  --addi r2, 5 (D)
       4 => B"0011_001_100_000011110",  --ld r4, 30  (E)
-                                       -- cmp r2,r4 (4 e 5 -> cmpi r2,30)
-      5 => B"0010_011_010_100_000000", --cmp
-      6 => B"0011_010_010_000011110",  --cmpi
-      7 => B"0100_001_000_111111101",  --blt -2 (ble -2)
-      8 => B"0100_000_000_111111101",  --apenas para testar o ble
+                                       --cmp r2,r4 (4 e 5 -> cmpi r2,30):
+      5 => B"0010_011_010_100_000000", --cmp r2, r4
+      6 => B"0011_010_010_000001101",  --cmpi r2,13
+      7 => B"0100_001_111111111101",   --blt -3 -----flags n devem mudar pra poder testar branch
+      8 => B"0100_000_111111111101",   --ble -3 -----flags n devem mudar pra poder testar branch
       9 => B"0010_010_100_011_000000", --mov r4, r3 (F)
       others => (others=>'0') --casos omissos => (zero em todos os bits) ()
    );

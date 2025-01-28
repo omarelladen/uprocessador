@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Tue Jan 21 00:17:47 2025
+[*] Wed Jan 22 00:41:00 2025
 [*]
-[dumpfile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/Lab6/tb.ghw"
-[dumpfile_mtime] "Tue Jan 21 00:17:16 2025"
-[dumpfile_size] 13053
-[savefile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/Lab6/tb/ondas.gtkw"
-[timestart] 592900000
+[dumpfile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/uprocessador_git/Lab6/tb.ghw"
+[dumpfile_mtime] "Tue Jan 21 23:52:17 2025"
+[dumpfile_size] 12869
+[savefile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/uprocessador_git/Lab6/tb/ondas.gtkw"
+[timestart] 668000000
 [size] 1920 993
-[pos] -51 -51
-*-26.099998 1242000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -30 -30
+*-27.830366 985000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.tb.
 [treeopen] top.tb.uut.
@@ -17,19 +17,18 @@
 [treeopen] top.tb.uut.pc_c.
 [treeopen] top.tb.uut.rom_c.
 [treeopen] top.tb.uut.uc_c.
+[treeopen] top.tb.uut.ula_c.
 [sst_width] 240
-[signals_width] 150
+[signals_width] 230
 [sst_expanded] 1
-[sst_vpaned_height] 645
+[sst_vpaned_height] 620
 @28
 top.tb.clk
 #{top.tb.uut.uc_c.state[1:0]} top.tb.uut.uc_c.state[1] top.tb.uut.uc_c.state[0]
 #{top.tb.uut.rom_c.endereco[11:0]} top.tb.uut.rom_c.endereco[11] top.tb.uut.rom_c.endereco[10] top.tb.uut.rom_c.endereco[9] top.tb.uut.rom_c.endereco[8] top.tb.uut.rom_c.endereco[7] top.tb.uut.rom_c.endereco[6] top.tb.uut.rom_c.endereco[5] top.tb.uut.rom_c.endereco[4] top.tb.uut.rom_c.endereco[3] top.tb.uut.rom_c.endereco[2] top.tb.uut.rom_c.endereco[1] top.tb.uut.rom_c.endereco[0]
 #{top.tb.uut.rom_c.rom_out[18:0]} top.tb.uut.rom_c.rom_out[18] top.tb.uut.rom_c.rom_out[17] top.tb.uut.rom_c.rom_out[16] top.tb.uut.rom_c.rom_out[15] top.tb.uut.rom_c.rom_out[14] top.tb.uut.rom_c.rom_out[13] top.tb.uut.rom_c.rom_out[12] top.tb.uut.rom_c.rom_out[11] top.tb.uut.rom_c.rom_out[10] top.tb.uut.rom_c.rom_out[9] top.tb.uut.rom_c.rom_out[8] top.tb.uut.rom_c.rom_out[7] top.tb.uut.rom_c.rom_out[6] top.tb.uut.rom_c.rom_out[5] top.tb.uut.rom_c.rom_out[4] top.tb.uut.rom_c.rom_out[3] top.tb.uut.rom_c.rom_out[2] top.tb.uut.rom_c.rom_out[1] top.tb.uut.rom_c.rom_out[0]
 #{top.tb.uut.instr_reg.registro[18:0]} top.tb.uut.instr_reg.registro[18] top.tb.uut.instr_reg.registro[17] top.tb.uut.instr_reg.registro[16] top.tb.uut.instr_reg.registro[15] top.tb.uut.instr_reg.registro[14] top.tb.uut.instr_reg.registro[13] top.tb.uut.instr_reg.registro[12] top.tb.uut.instr_reg.registro[11] top.tb.uut.instr_reg.registro[10] top.tb.uut.instr_reg.registro[9] top.tb.uut.instr_reg.registro[8] top.tb.uut.instr_reg.registro[7] top.tb.uut.instr_reg.registro[6] top.tb.uut.instr_reg.registro[5] top.tb.uut.instr_reg.registro[4] top.tb.uut.instr_reg.registro[3] top.tb.uut.instr_reg.registro[2] top.tb.uut.instr_reg.registro[1] top.tb.uut.instr_reg.registro[0]
-@29
 top.tb.uut.uc_c.irwrite
-@28
 #{top.tb.uut.regfile.reg_r0[2:0]} top.tb.uut.regfile.reg_r0[2] top.tb.uut.regfile.reg_r0[1] top.tb.uut.regfile.reg_r0[0]
 #{top.tb.uut.regfile.reg_r1[2:0]} top.tb.uut.regfile.reg_r1[2] top.tb.uut.regfile.reg_r1[1] top.tb.uut.regfile.reg_r1[0]
 @22
@@ -47,5 +46,22 @@ top.tb.uut.uc_c.regwrite
 top.tb.uut.pc_wr_s
 #{top.tb.uut.pc_c.data_out[11:0]} top.tb.uut.pc_c.data_out[11] top.tb.uut.pc_c.data_out[10] top.tb.uut.pc_c.data_out[9] top.tb.uut.pc_c.data_out[8] top.tb.uut.pc_c.data_out[7] top.tb.uut.pc_c.data_out[6] top.tb.uut.pc_c.data_out[5] top.tb.uut.pc_c.data_out[4] top.tb.uut.pc_c.data_out[3] top.tb.uut.pc_c.data_out[2] top.tb.uut.pc_c.data_out[1] top.tb.uut.pc_c.data_out[0]
 #{top.tb.uut.ir_out_s[18:0]} top.tb.uut.ir_out_s[18] top.tb.uut.ir_out_s[17] top.tb.uut.ir_out_s[16] top.tb.uut.ir_out_s[15] top.tb.uut.ir_out_s[14] top.tb.uut.ir_out_s[13] top.tb.uut.ir_out_s[12] top.tb.uut.ir_out_s[11] top.tb.uut.ir_out_s[10] top.tb.uut.ir_out_s[9] top.tb.uut.ir_out_s[8] top.tb.uut.ir_out_s[7] top.tb.uut.ir_out_s[6] top.tb.uut.ir_out_s[5] top.tb.uut.ir_out_s[4] top.tb.uut.ir_out_s[3] top.tb.uut.ir_out_s[2] top.tb.uut.ir_out_s[1] top.tb.uut.ir_out_s[0]
+#{top.tb.uut.ula_c.op_sel[1:0]} top.tb.uut.ula_c.op_sel[1] top.tb.uut.ula_c.op_sel[0]
+top.tb.uut.uc_c.alusrcb
+@22
+#{top.tb.uut.pc_c.data_out[11:0]} top.tb.uut.pc_c.data_out[11] top.tb.uut.pc_c.data_out[10] top.tb.uut.pc_c.data_out[9] top.tb.uut.pc_c.data_out[8] top.tb.uut.pc_c.data_out[7] top.tb.uut.pc_c.data_out[6] top.tb.uut.pc_c.data_out[5] top.tb.uut.pc_c.data_out[4] top.tb.uut.pc_c.data_out[3] top.tb.uut.pc_c.data_out[2] top.tb.uut.pc_c.data_out[1] top.tb.uut.pc_c.data_out[0]
+#{top.tb.uut.ula_c.op_a[15:0]} top.tb.uut.ula_c.op_a[15] top.tb.uut.ula_c.op_a[14] top.tb.uut.ula_c.op_a[13] top.tb.uut.ula_c.op_a[12] top.tb.uut.ula_c.op_a[11] top.tb.uut.ula_c.op_a[10] top.tb.uut.ula_c.op_a[9] top.tb.uut.ula_c.op_a[8] top.tb.uut.ula_c.op_a[7] top.tb.uut.ula_c.op_a[6] top.tb.uut.ula_c.op_a[5] top.tb.uut.ula_c.op_a[4] top.tb.uut.ula_c.op_a[3] top.tb.uut.ula_c.op_a[2] top.tb.uut.ula_c.op_a[1] top.tb.uut.ula_c.op_a[0]
+#{top.tb.uut.ula_c.op_b[15:0]} top.tb.uut.ula_c.op_b[15] top.tb.uut.ula_c.op_b[14] top.tb.uut.ula_c.op_b[13] top.tb.uut.ula_c.op_b[12] top.tb.uut.ula_c.op_b[11] top.tb.uut.ula_c.op_b[10] top.tb.uut.ula_c.op_b[9] top.tb.uut.ula_c.op_b[8] top.tb.uut.ula_c.op_b[7] top.tb.uut.ula_c.op_b[6] top.tb.uut.ula_c.op_b[5] top.tb.uut.ula_c.op_b[4] top.tb.uut.ula_c.op_b[3] top.tb.uut.ula_c.op_b[2] top.tb.uut.ula_c.op_b[1] top.tb.uut.ula_c.op_b[0]
+#{top.tb.uut.ula_c.ula_out[15:0]} top.tb.uut.ula_c.ula_out[15] top.tb.uut.ula_c.ula_out[14] top.tb.uut.ula_c.ula_out[13] top.tb.uut.ula_c.ula_out[12] top.tb.uut.ula_c.ula_out[11] top.tb.uut.ula_c.ula_out[10] top.tb.uut.ula_c.ula_out[9] top.tb.uut.ula_c.ula_out[8] top.tb.uut.ula_c.ula_out[7] top.tb.uut.ula_c.ula_out[6] top.tb.uut.ula_c.ula_out[5] top.tb.uut.ula_c.ula_out[4] top.tb.uut.ula_c.ula_out[3] top.tb.uut.ula_c.ula_out[2] top.tb.uut.ula_c.ula_out[1] top.tb.uut.ula_c.ula_out[0]
+@28
+top.tb.uut.ula_c.z
+top.tb.uut.z_reg_s
+top.tb.uut.ula_c.n
+top.tb.uut.n_reg_s
+top.tb.uut.ula_c.v
+top.tb.uut.v_reg_s
+top.tb.uut.uc_c.flag_cond_s
+@29
+top.tb.uut.uc_c.pcwrcond_s
 [pattern_trace] 1
 [pattern_trace] 0

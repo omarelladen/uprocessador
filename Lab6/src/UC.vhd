@@ -10,7 +10,9 @@ entity UC is
         pc_wr, irwrite, regwrite, memtoreg, regzero, alusrcb: out std_logic;
         aluop : out unsigned(1 downto 0);
         state : out unsigned(1 downto 0);
-        pcsource : out unsigned(1 downto 0)
+        pcsource : out unsigned(1 downto 0);
+
+        flag_wr_en : out std_logic
     );
 end entity;
 
@@ -27,8 +29,8 @@ begin
         if rst='1' then 
             state_s <= "00";
         elsif(rising_edge(clk)) then ---limitar tamanho do jump
-            if(state_s = "11" or (state_s="10" and opcode_s="0011" and funct_s="001") or (state_s="11" and opcode_s="0010")) or (state_s="10" and opcode_s="0001") then --dps mudar maximo n de estados (5 (000-100)) --reseta antes do max de estados dependendo da instr E COLOCAR EXPLICITAMENTE TODOS OS Q VAO ATE 11 SO
-                state_s <= "00";  --ld                                                    --R                                    --jump
+            if(state_s = "11" or (state_s="10" and opcode_s="0011" and funct_s="001") or (state_s="11" and opcode_s="0010")) or (state_s="10" and opcode_s="0001") or (state_s="10" and opcode_s="0010" and funct_s="011") or (state_s="10" and opcode_s="0011" and funct_s="010")  then --dps mudar maximo n de estados (5 (000-100)) --reseta antes do max de estados dependendo da instr E COLOCAR EXPLICITAMENTE TODOS OS Q VAO ATE 11 SO
+                state_s <= "00";  --ld                                                    --R                                    --jump                                --cmp                                                   --cmpi
             else
                 state_s <= state_s + 1;
             end if;
@@ -58,6 +60,7 @@ begin
 
     -- op da ula
     aluop <= "00" when opcode_s="0010" and funct_s="000" else --add
+             "00" when opcode_s="0011" and funct_s="000" else --addi
              "01" when opcode_s="0010" and funct_s="001" else --sub
              "01" when opcode_s="0010" and funct_s="011" else --cmp  (faz sub)
              "01" when opcode_s="0011" and funct_s="010" else --cmpi (faz sub)
@@ -70,7 +73,7 @@ begin
                 '0' when opcode_s="0011" else --addi, cmpi
                 '0'; -- explicito
 
-    regzero <= '0' when (opcode_s="0010" and funct_s="010") else --ld
+    regzero <= '0' when (opcode_s="0010" and funct_s="010") else --mv
                '1';
  
     alusrcb <= '1' when (opcode_s="0011" and (funct_s="000" or funct_s="010")) else ---- addi ou cmpi
@@ -80,20 +83,33 @@ begin
 
     
 
-    --outra cond pra porta AND vem das flags
-    flag_cond_s <= '1' when (opcode_s="0100") and (funct_s="000") and (v_flag_in='1' and n_flag_in /= z_flag_in) else --ble
+    --(outra cond pra porta AND vem das flags)
+    flag_cond_s <= '1' when (opcode_s="0100") and (funct_s="000") and (v_flag_in='1' or n_flag_in /= z_flag_in) else --ble
                    '1' when (opcode_s="0100") and (funct_s="001") and (n_flag_in /= v_flag_in) else --blt
                    '0';
-
-    pcwrcond_s <= '1' when (state_s="010" and opcode_s="0100") else
+    --(uma cond pra AND junto com a acima) --- ver se eh nesse estado msm q manda o 1
+    pcwrcond_s <= '1' when (state_s="010" and opcode_s="0100") else --branch
                   '0';
 
-    regwrite <= '1' when opcode_s="0010" and state_s = "11" else --add
-            '1' when opcode_s="0011" and state_s = "10" else --ld
-            '0';-- dps nos load pd ter o write no 4o estado
+    regwrite <= '1' when opcode_s="0010" and funct_s="000" and state_s="11" else --add
+                '1' when opcode_s="0010" and funct_s="001" and state_s="11" else --sub
+                '1' when opcode_s="0011" and funct_s="000" and state_s="10" else --addi
+                '1' when opcode_s="0011" and funct_s="001" and state_s="10" else --ld
+                '0';-- dps nos load pd ter o write no 4o estado
+                ------------------MV??????????????
 
-    pcsource <= "10" when (opcode_s="0100" and state_s="10") else -- branch
+    pcsource <= "10" when (opcode_s="0100" and state_s="10") else -- branch ------------------------ se n atender cond da branch o pc vai deixar de avancar??
                 "01" when (opcode_s="0001" and state_s/="00") else -- jump
                 "00"; -- contagem normal
+
+
+    --atualizacao de flag pra branch apenas em op de ula
+    flag_wr_en <= '1' when opcode_s="0010" and funct_s="000" else --add
+                  '1' when opcode_s="0011" and funct_s="000" else --addi
+                  '1' when opcode_s="0010" and funct_s="001" else --sub
+                  '1' when opcode_s="0010" and funct_s="011" else --cmp 
+                  '1' when opcode_s="0011" and funct_s="010" else --cmpi
+                  '1' when opcode_s="0010" and funct_s="010" else --mv
+                  '0';
 
 end architecture;

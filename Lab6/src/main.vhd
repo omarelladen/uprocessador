@@ -7,7 +7,6 @@ entity main is
 
         rst : in std_logic;
         clk      : in std_logic
-        
     );
 end entity;
 
@@ -27,7 +26,8 @@ architecture a_main of main is
             pc_wr, irwrite, regwrite, memtoreg, regzero, alusrcb: out std_logic;
             aluop : out unsigned(1 downto 0);
             state : out unsigned(1 downto 0);
-            pcsource : out unsigned(1 downto 0)
+            pcsource : out unsigned(1 downto 0);
+            flag_wr_en : out std_logic
         );
     end component;
 
@@ -76,6 +76,15 @@ architecture a_main of main is
         );
     end component;
 
+
+    component reg1bit is
+        port(
+            clk, rst, wr_en : in std_logic;
+            data_in : in std_logic;
+            data_out : out std_logic
+        );
+    end component;
+
 -------------------- JUNTAR --------------------
 signal rom_out_s : unsigned(18 downto 0);
 signal state_s : unsigned(1 downto 0);
@@ -97,6 +106,8 @@ signal alusrcb_s : std_logic;
 signal ula_op_b_selected_s : unsigned(15 downto 0);
 signal pcsource_s : unsigned(1 downto 0);
 
+signal flag_wr_en_s, z_reg_s, n_reg_s, v_reg_s : std_logic;
+
 begin
     rom_c : ROM port map( -- n pode rom = ROM
         endereco => pc_out_s,
@@ -107,9 +118,9 @@ begin
         clk => clk,
         rst => rst,
         instr => ir_out_s,
-        z_flag_in => z_s,
-        n_flag_in => n_s,
-        v_flag_in => v_s,        
+        z_flag_in => z_reg_s,
+        n_flag_in => n_reg_s,
+        v_flag_in => v_reg_s,        
         state => state_s, --signal
         pc_wr => pc_wr_s,
         irwrite => irwrite_s,
@@ -118,7 +129,8 @@ begin
         memtoreg => memtoreg_s,
         regzero => regzero_s,
         alusrcb => alusrcb_s,
-        pcsource => pcsource_s
+        pcsource => pcsource_s,
+        flag_wr_en => flag_wr_en_s
     );
 
     pc_c : reg12bits port map( ------n ta escrevendo apos o jump, e limitar o tamanho do jump, e tirar nop do end 0 (dara ruim? precisara de um rst add?)
@@ -181,25 +193,56 @@ begin
         data_out => aluout_s --signal
     );
 
+    reg_z : reg1bit port map(
+        clk => clk,
+        rst => rst,
+        wr_en => flag_wr_en_s,
+        data_in => z_s,
+        data_out => z_reg_s --signal
+    );
+    reg_n : reg1bit port map(
+        clk => clk,
+        rst => rst,
+        wr_en => flag_wr_en_s,
+        data_in => n_s,
+        data_out => n_reg_s --signal
+    );
+    reg_v : reg1bit port map(
+        clk => clk,
+        rst => rst,
+        wr_en => flag_wr_en_s,
+        data_in => v_s,
+        data_out => v_reg_s --signal
+    );
+
     -------------------- TROCAR NOME --------------------
     --entrada do pc (end)(apesar de se chamar jump_EN, é basicamente um mux)
 
+
+    ----------------------------------------------------------------------------------------------
+    ------------------------deu erro com ble -3 mas n com +4 (funcionou)--------------------------  dps funcionou (??????)
+    ----------------------------------------------------------------------------------------------
+    
+    ---------------   confirmar -1   e +1
     -- adicionei: aluout_s(11 downto 0). era isso msm q faltava? trocar pc logo pra 16b??????????????????????????????????????????? 
-    pc_in_s <= (aluout_s(11 downto 0) + pc_out_s -1) when pcsource_s="10" else -- branch
-               (ir_out_s(11 downto 0)) when pcsource_s="01" else -- jump
-               (pc_out_s +1); -- when pcsource_s="00"           -- cont normal
+    pc_in_s <= (ir_out_s(11 downto 0) + pc_out_s-1) when pcsource_s="10" else -- branch
+               (ir_out_s(11 downto 0))              when pcsource_s="01" else -- jump
+               (pc_out_s+1);                     -- when pcsource_s="00"      -- cont normal
 
     data_wr_s <= aluout_s when memtoreg_s='0' else -- res da ula no reg ulaout
                 "0000000" & (ir_out_s(8 downto 0)) when memtoreg_s='1' and ir_out_s(8)='0' else -- cte da instr ld com 0 estendido
                 "1111111" & (ir_out_s(8 downto 0)) when memtoreg_s='1' and ir_out_s(8)='1' else -- cte da instr ld com 1 estendido
                 "0000000000000000";
                 
-    reg_r0_s <= "000" when regzero_s='0' else
+    reg_r0_s <= "000" when regzero_s='0' else --mv
                 ir_out_s(11 downto 9);
 
     ula_op_b_selected_s <= "1111111" & (ir_out_s(8 downto 0)) when alusrcb_s='1' and ir_out_s(8)='1' else -- ext p imm
                            "0000000" & (ir_out_s(8 downto 0)) when alusrcb_s='1' and ir_out_s(8)='0' else
                             reg_b_out_s;-- reg b             
+    
+
+
     
  
 end architecture;
