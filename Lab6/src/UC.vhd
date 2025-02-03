@@ -93,7 +93,7 @@ begin
 
     regwrite <= '1' when opcode_s="0010" and funct_s="000" and state_s="11" else --add
                 '1' when opcode_s="0010" and funct_s="001" and state_s="11" else --sub
-                '1' when opcode_s="0011" and funct_s="000" and state_s="10" else --addi
+                '1' when opcode_s="0011" and funct_s="000" and state_s="11" else --addi
                 '1' when opcode_s="0011" and funct_s="001" and state_s="10" else --ld
                 '1' when opcode_s="0010" and funct_s="010" and state_s="11" else --mv
                 '0';-- dps nos load pd ter o write no 4o estado
