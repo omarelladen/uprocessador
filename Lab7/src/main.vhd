@@ -10,6 +10,7 @@ entity main is
     );
 end entity;
 
+
 architecture a_main of main is
 
     component ROM is
@@ -34,7 +35,6 @@ architecture a_main of main is
         port(
             clk, rst, wr_en : in std_logic;
             data_in : in unsigned(11 downto 0);
-    
             data_out : out unsigned(11 downto 0)
         );
     end component;
@@ -43,7 +43,6 @@ architecture a_main of main is
         port(
             clk, rst, wr_en : in std_logic;
             data_in : in unsigned(18 downto 0);
-    
             data_out : out unsigned(18 downto 0)
         );
     end component;
@@ -84,27 +83,14 @@ architecture a_main of main is
         );
     end component;
 
--------------------- JUNTAR --------------------
-signal rom_out_s : unsigned(18 downto 0);
 
-signal pc_wr_s : std_logic;
-signal pc_in_s : unsigned(11 downto 0) := "000000000000";
-signal pc_out_s : unsigned(11 downto 0);
-signal ir_out_s : unsigned(18 downto 0) := "0000000000000000000";
-signal irwrite_s : std_logic;
-signal regwrite_s : std_logic;
-signal z_s, n_s, v_s: std_logic;
-signal data_r0_s, data_r1_s, reg_a_out_s, reg_b_out_s, ula_result_s, aluout_s: unsigned(15 downto 0);
-signal aluop_s : unsigned(1 downto 0);
-signal data_wr_s : unsigned(15 downto 0);
-signal memtoreg_s : std_logic;
-signal regzero_s: std_logic;
+signal rom_out_s, ir_out_s : unsigned(18 downto 0);
+signal data_r0_s, data_r1_s, reg_a_out_s, reg_b_out_s, ula_result_s, aluout_s, data_wr_s, ula_op_b_selected_s: unsigned(15 downto 0);
+signal pc_in_s, pc_out_s : unsigned(11 downto 0);
 signal reg_r0_s : unsigned (2 downto 0);
-signal alusrcb_s : std_logic;
-signal ula_op_b_selected_s : unsigned(15 downto 0);
-signal pcsource_s : unsigned(1 downto 0);
+signal aluop_s, pcsource_s : unsigned(1 downto 0);
+signal pc_wr_s, irwrite_s, regwrite_s, z_s, n_s, v_s, memtoreg_s, regzero_s, alusrcb_s, flag_wr_en_s, z_reg_s, n_reg_s, v_reg_s : std_logic;
 
-signal flag_wr_en_s, z_reg_s, n_reg_s, v_reg_s : std_logic;
 
 begin
     rom_c : ROM port map( -- n pode rom = ROM
