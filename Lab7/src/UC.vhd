@@ -31,11 +31,12 @@ begin
             state_s <= "000";
         elsif(rising_edge(clk)) then ---limitar tamanho do jump
             if(state_s="011" or
-              (state_s="010" and ld_op='1') or        --ld
-              (state_s="011" and opcode_s="0010")) or --R
-              (state_s="010" and jump_op='1') or      --jump
-              (state_s="010" and cmp_op='1') or       --cmp
-              (state_s="010" and cmpi_op='1') then    --cmpi
+              (state_s="010" and ld_op='1') or        -- ld
+              (state_s="011" and opcode_s="0010")) or -- R menos cmp
+              (state_s="010" and jump_op='1') or      -- jump
+              (state_s="010" and cmp_op='1') or       -- cmp
+              (state_s="010" and cmpi_op='1') then    -- cmpi
+              -- addi, ble, blt, lw, sw
               --dps mudar maximo n de estados (5 (000-100)) --reseta antes do max de estados dependendo da instr E COLOCAR EXPLICITAMENTE TODOS OS Q VAO ATE 11 SO
                 state_s <= "000";                                                    
             else
@@ -49,7 +50,7 @@ begin
     opcode_s <= instr(18 downto 15);
     funct_s <= instr(14 downto 12);
 
-    nop_op  <= '1' when instr="0000000000000000000" else '0';---- n to usando
+    nop_op  <= '1' when instr="0000000000000000000" else '0';----------------------------- usar (n to usando)
     jump_op <= '1' when opcode_s="0001" and funct_s="000" else '0';
     add_op  <= '1' when opcode_s="0010" and funct_s="000" else '0';
     sub_op  <= '1' when opcode_s="0010" and funct_s="001" else '0';
@@ -112,7 +113,7 @@ begin
 
     regwrite <= '1' when add_op ='1' and state_s="011" else --add
                 '1' when sub_op ='1' and state_s="011" else --sub
-                '1' when addi_op='1' and state_s="010" else --addi
+                '1' when addi_op='1' and state_s="011" else --addi
                 '1' when ld_op  ='1' and state_s="010" else --ld
                 '1' when mv_op  ='1' and state_s="011" else --mv
                 '0'; -- dps nos load pd ter o write no 4o estado
