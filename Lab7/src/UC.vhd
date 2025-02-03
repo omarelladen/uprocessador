@@ -8,8 +8,7 @@ entity UC is
         instr : in unsigned(18 downto 0);
         z_flag_in , n_flag_in, v_flag_in : in std_logic;
         pc_wr, irwrite, regwrite, memtoreg, regzero, alusrcb: out std_logic;
-        aluop : out unsigned(1 downto 0);
-        pcsource : out unsigned(1 downto 0);
+        aluop, pcsource : out unsigned(1 downto 0);
         flag_wr_en : out std_logic
     );
 end entity;
@@ -19,9 +18,8 @@ architecture a_UC of UC is
 
     --"vars" interm pra mlr org:
     signal opcode_s : unsigned(3 downto 0);    
-    signal funct_s : unsigned(2 downto 0);     
-    signal flag_cond_s, pcwrcond_s : std_logic;
-    signal add_op, addi_op, sub_op, cmp_op, cmpi_op, jump_op, ble_op, blt_op, mv_op, ld_op, lw_op, sw_op, nop_op : std_logic;
+    signal funct_s : unsigned(2 downto 0);
+    signal flag_cond_s, pcwrcond_s, add_op, addi_op, sub_op, cmp_op, cmpi_op, jump_op, ble_op, blt_op, mv_op, ld_op, lw_op, sw_op, nop_op : std_logic;
 
 
 begin
@@ -37,7 +35,7 @@ begin
               (state_s="010" and jump_op='1') or       -- jump
               (state_s="010" and cmp_op='1') or        -- cmp
               (state_s="010" and cmpi_op='1') or       -- cmpi
-              (state_s="010" and opcode_s="1000") then -- ble, blt   --------------- igual se for 010 ou 011 -- pula pra inst anterior aa desejada, pq em seguida vai avancaar pc+1 ---- ver se isso n vai executar algo indesejado
+              (state_s="010" and opcode_s="0100") then -- ble, blt   --------------- igual se for 010 ou 011 -- pula pra inst anterior aa desejada, pq em seguida vai avancaar pc+1 ---- ver se isso n vai executar algo indesejado
                 state_s <= "000";                                                    
             else
                 state_s <= state_s + 1;

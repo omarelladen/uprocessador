@@ -25,8 +25,7 @@ architecture a_main of main is
             instr : in unsigned(18 downto 0);
             z_flag_in , n_flag_in, v_flag_in : in std_logic;
             pc_wr, irwrite, regwrite, memtoreg, regzero, alusrcb: out std_logic;
-            aluop : out unsigned(1 downto 0);
-            pcsource : out unsigned(1 downto 0);
+            aluop, pcsource : out unsigned(1 downto 0);
             flag_wr_en : out std_logic
         );
     end component;
@@ -95,7 +94,7 @@ signal pc_wr_s, irwrite_s, regwrite_s, z_s, n_s, v_s, memtoreg_s, regzero_s, alu
 begin
     rom_c : ROM port map( -- n pode rom = ROM
         endereco => pc_out_s,
-        rom_out => rom_out_s --signal
+        rom_out => rom_out_s
     ); 
 
     uc_c : UC port map(
@@ -116,12 +115,12 @@ begin
         flag_wr_en => flag_wr_en_s
     );
 
-    pc_c : reg12bits port map( ------n ta escrevendo apos o jump, e limitar o tamanho do jump, e tirar nop do end 0 (dara ruim? precisara de um rst add?)
+    pc_c : reg12bits port map( --comentario antigo - ja foi corrigido??: ----n ta escrevendo apos o jump, e limitar o tamanho do jump, e tirar nop do end 0 (dara ruim? precisara de um rst add?)
         clk => clk,
         rst => rst,
         wr_en => pc_wr_s, -- vir da UC
         data_in => pc_in_s,
-        data_out => pc_out_s --signal
+        data_out => pc_out_s
     );
 
     instr_reg : reg19bits port map(
@@ -129,7 +128,7 @@ begin
         rst => rst,
         wr_en => irwrite_s, -- vir da UC
         data_in => rom_out_s,
-        data_out => ir_out_s --signal
+        data_out => ir_out_s
     );
 
     regFile : registerFile port map(
@@ -159,21 +158,21 @@ begin
         rst => rst,
         wr_en => '1', -- sempre enabled
         data_in => data_r0_s,
-        data_out => reg_a_out_s --signal
+        data_out => reg_a_out_s 
     );
     reg_b : reg16bits port map(
         clk => clk,
         rst => rst,
         wr_en => '1', -- sempre enabled
         data_in => data_r1_s,
-        data_out => reg_b_out_s --signal
+        data_out => reg_b_out_s 
     );
     aluout : reg16bits port map(
         clk => clk,
         rst => rst,
         wr_en => '1', -- sempre enabled
         data_in => ula_result_s,
-        data_out => aluout_s --signal
+        data_out => aluout_s 
     );
 
     reg_z : reg1bit port map(
@@ -181,21 +180,21 @@ begin
         rst => rst,
         wr_en => flag_wr_en_s,
         data_in => z_s,
-        data_out => z_reg_s --signal
+        data_out => z_reg_s 
     );
     reg_n : reg1bit port map(
         clk => clk,
         rst => rst,
         wr_en => flag_wr_en_s,
         data_in => n_s,
-        data_out => n_reg_s --signal
+        data_out => n_reg_s 
     );
     reg_v : reg1bit port map(
         clk => clk,
         rst => rst,
         wr_en => flag_wr_en_s,
         data_in => v_s,
-        data_out => v_reg_s --signal
+        data_out => v_reg_s 
     );
 
     -------------------- TROCAR NOME --------------------

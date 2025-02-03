@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Mon Feb  3 00:09:30 2025
+[*] Mon Feb  3 23:21:53 2025
 [*]
 [dumpfile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/uprocessador_git/Lab7/tb.ghw"
-[dumpfile_mtime] "Mon Feb  3 00:06:02 2025"
-[dumpfile_size] 12588
+[dumpfile_mtime] "Mon Feb  3 23:11:16 2025"
+[dumpfile_size] 25497
 [savefile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/uprocessador_git/Lab7/tb/ondas.gtkw"
-[timestart] 0
-[size] 1920 993
-[pos] -30 -30
-*-27.830366 575000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 1034000000
+[size] 1366 681
+[pos] 1890 282
+*-27.530367 1177400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.tb.
 [treeopen] top.tb.uut.
@@ -21,15 +21,13 @@
 [sst_width] 240
 [signals_width] 230
 [sst_expanded] 1
-[sst_vpaned_height] 620
+[sst_vpaned_height] 393
 @28
 top.tb.clk
-@29
 #{top.tb.uut.uc_c.state_s[2:0]} top.tb.uut.uc_c.state_s[2] top.tb.uut.uc_c.state_s[1] top.tb.uut.uc_c.state_s[0]
-@28
 #{top.tb.uut.rom_c.endereco[11:0]} top.tb.uut.rom_c.endereco[11] top.tb.uut.rom_c.endereco[10] top.tb.uut.rom_c.endereco[9] top.tb.uut.rom_c.endereco[8] top.tb.uut.rom_c.endereco[7] top.tb.uut.rom_c.endereco[6] top.tb.uut.rom_c.endereco[5] top.tb.uut.rom_c.endereco[4] top.tb.uut.rom_c.endereco[3] top.tb.uut.rom_c.endereco[2] top.tb.uut.rom_c.endereco[1] top.tb.uut.rom_c.endereco[0]
 #{top.tb.uut.rom_c.rom_out[18:0]} top.tb.uut.rom_c.rom_out[18] top.tb.uut.rom_c.rom_out[17] top.tb.uut.rom_c.rom_out[16] top.tb.uut.rom_c.rom_out[15] top.tb.uut.rom_c.rom_out[14] top.tb.uut.rom_c.rom_out[13] top.tb.uut.rom_c.rom_out[12] top.tb.uut.rom_c.rom_out[11] top.tb.uut.rom_c.rom_out[10] top.tb.uut.rom_c.rom_out[9] top.tb.uut.rom_c.rom_out[8] top.tb.uut.rom_c.rom_out[7] top.tb.uut.rom_c.rom_out[6] top.tb.uut.rom_c.rom_out[5] top.tb.uut.rom_c.rom_out[4] top.tb.uut.rom_c.rom_out[3] top.tb.uut.rom_c.rom_out[2] top.tb.uut.rom_c.rom_out[1] top.tb.uut.rom_c.rom_out[0]
-#{top.tb.uut.instr_reg.registro[18:0]} top.tb.uut.instr_reg.registro[18] top.tb.uut.instr_reg.registro[17] top.tb.uut.instr_reg.registro[16] top.tb.uut.instr_reg.registro[15] top.tb.uut.instr_reg.registro[14] top.tb.uut.instr_reg.registro[13] top.tb.uut.instr_reg.registro[12] top.tb.uut.instr_reg.registro[11] top.tb.uut.instr_reg.registro[10] top.tb.uut.instr_reg.registro[9] top.tb.uut.instr_reg.registro[8] top.tb.uut.instr_reg.registro[7] top.tb.uut.instr_reg.registro[6] top.tb.uut.instr_reg.registro[5] top.tb.uut.instr_reg.registro[4] top.tb.uut.instr_reg.registro[3] top.tb.uut.instr_reg.registro[2] top.tb.uut.instr_reg.registro[1] top.tb.uut.instr_reg.registro[0]
+#{top.tb.uut.uc_c.instr[18:0]} top.tb.uut.uc_c.instr[18] top.tb.uut.uc_c.instr[17] top.tb.uut.uc_c.instr[16] top.tb.uut.uc_c.instr[15] top.tb.uut.uc_c.instr[14] top.tb.uut.uc_c.instr[13] top.tb.uut.uc_c.instr[12] top.tb.uut.uc_c.instr[11] top.tb.uut.uc_c.instr[10] top.tb.uut.uc_c.instr[9] top.tb.uut.uc_c.instr[8] top.tb.uut.uc_c.instr[7] top.tb.uut.uc_c.instr[6] top.tb.uut.uc_c.instr[5] top.tb.uut.uc_c.instr[4] top.tb.uut.uc_c.instr[3] top.tb.uut.uc_c.instr[2] top.tb.uut.uc_c.instr[1] top.tb.uut.uc_c.instr[0]
 top.tb.uut.uc_c.irwrite
 #{top.tb.uut.regfile.reg_r0[2:0]} top.tb.uut.regfile.reg_r0[2] top.tb.uut.regfile.reg_r0[1] top.tb.uut.regfile.reg_r0[0]
 #{top.tb.uut.regfile.reg_r1[2:0]} top.tb.uut.regfile.reg_r1[2] top.tb.uut.regfile.reg_r1[1] top.tb.uut.regfile.reg_r1[0]
