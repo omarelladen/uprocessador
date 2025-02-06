@@ -61,7 +61,7 @@ As instruções do tipo B são usadas para saltos condicionais, baseados em comp
 * BLT: Salta se o valor de primeiro operando for menor do que o segundo na última comparação.
 ### Instruções de Tipo S
 As instruções do tipo R envolvem operações aritméticas ou lógicas entre registradores. Elas utilizam os campos R0 e R1 para armazenar os operandos e resultados.
-| Instruções (R) | Opcode | FUNCT | R0 (11 downto 9) | Offset (8 downto 3) | R1 (8 downto 6) |
+| Instruções (R) | Opcode | FUNCT | R0 (11 downto 9) | Offset (8 downto 3) | R1 (2 downto 0) |
 |----------------|--------|-------|------------------|---------------------|-----------------|
 | LW             | 0101   | 000   |                  |                     |                 |
 | SW             | 0101   | 001   |                  |                     |                 |
