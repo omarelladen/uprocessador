@@ -3,12 +3,12 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity UC is
-    port (
+    port(
         clk, rst : in std_logic;
         instr : in unsigned(18 downto 0);
         z_flag_in , n_flag_in, v_flag_in : in std_logic;
-        pc_wr, irwrite, regwrite, memtoreg, regzero, alusrcb: out std_logic;
-        aluop, pcsource : out unsigned(1 downto 0);
+        pc_wr, irwrite, regwrite, memtoreg, memwrite, wrdata_sel, readregb_sel: out std_logic;  -- melhor _nomes
+        aluop, pcsource, regzero, alusrcb : out unsigned(1 downto 0);
         flag_wr_en : out std_logic
     );
 end entity;
@@ -28,14 +28,15 @@ begin
         if rst='1' then
             state_s <= "000";
         elsif(rising_edge(clk)) then ---limitar tamanho do jump
-            if state_s="100" or                        -- lw, sw
-              (state_s="010" and ld_op='1') or         -- ld
-              (state_s="011" and opcode_s="0010") or   -- R menos cmp
-              (state_s="011" and addi_op='1') or       -- addi
-              (state_s="010" and jump_op='1') or       -- jump
-              (state_s="010" and cmp_op='1') or        -- cmp
-              (state_s="010" and cmpi_op='1') or       -- cmpi
-              (state_s="010" and opcode_s="0100") then -- ble, blt   --------------- igual se for 010 ou 011 -- pula pra inst anterior aa desejada, pq em seguida vai avancaar pc+1 ---- ver se isso n vai executar algo indesejado
+            if state_s="100" or                        ----lw
+              (state_s="011" and sw_op='1') or         --sw
+              (state_s="010" and ld_op='1') or         --ld
+              (state_s="011" and opcode_s="0010") or   --R menos cmp
+              (state_s="011" and addi_op='1') or       --addi
+              (state_s="010" and jump_op='1') or       --jump
+              (state_s="010" and cmp_op='1') or        --cmp
+              (state_s="010" and cmpi_op='1') or       --cmpi
+              (state_s="010" and opcode_s="0100") then --ble, blt   --------------- igual se for 010 ou 011 -- pula pra inst anterior aa desejada, pq em seguida vai avancaar pc+1 ---- ver se isso n vai executar algo indesejado
                 state_s <= "000";                                                    
             else
                 state_s <= state_s + 1;
@@ -82,22 +83,27 @@ begin
              "00" when add_op ='1' else --add
              "00" when addi_op='1' else --addi
              "00" when mv_op  ='1' else --mv
+             "00" when opcode_s="0101" else --lw,sw
              "00"; -- explicito
 
 
     -- sel do mux para write data do reg file
     memtoreg <= '1' when ld_op='1' else                    -- ld
                 '0' when opcode_s="0010" else              -- R            
-                '0' when (addi_op='1' or cmpi_op='1') else -- addi, cmpi
+                '0' when (addi_op='1' or cmpi_op='1') else -- addi,cmpi
                 '0'; -- explicito
 
 
-    regzero <= '0' when mv_op ='1' else --mv
-               '1';
+    regzero <= "00" when mv_op ='1' else      --mv
+               "01" when opcode_s="0101" else --lw, sw
+               "10";
  
 
-    alusrcb <= '1' when (addi_op ='1' or cmpi_op ='1') else -- addi, cmpi
-               '0';
+    alusrcb <= "00" when addi_op='1' else --addi
+               "00" when cmpi_op='1' else --cmpi
+               "01" when opcode_s="0101" else
+               "10";
+    -- mudar inst pra reaproveitar 1o reg da instr pra fazer soma ou aumentar tamanho da entr do mux do reg a (e add aqui alusrca) - dps tmb colocar opcao da cte menor pra fazer imm
 
 
     flag_cond_s <= '1' when ble_op ='1' and (v_flag_in='1' or n_flag_in /= z_flag_in) else --ble
@@ -113,7 +119,8 @@ begin
                 '1' when addi_op='1' and state_s="011" else --addi
                 '1' when ld_op  ='1' and state_s="010" else --ld
                 '1' when mv_op  ='1' and state_s="011" else --mv
-                '0'; ------- dps nos load pd ter o write no 4o estado
+                '1' when lw_op  ='1' and state_s="100" else --lw
+                '0';
 
 
     pcsource <= "10" when (opcode_s="0100" and state_s ="010") else -- branch ------------------------ se n atender cond da branch o pc vai deixar de avancar??
@@ -130,4 +137,17 @@ begin
                   '1' when mv_op  ='1' else --mv
                   '0';
 
+
+    memwrite <= '1' when sw_op='1' and state_s="011" else --sw
+                '0';
+            
+
+    -- MUX
+    wrdata_sel <= '1' when lw_op='1' else --sw
+                  '0';   
+    
+    -- MUX
+    readregb_sel <= '1' when opcode_s="0101" else
+                    '0';
+ 
 end architecture;

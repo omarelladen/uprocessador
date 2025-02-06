@@ -1,20 +1,22 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Mon Feb  3 23:21:53 2025
+[*] Thu Feb  6 00:13:10 2025
 [*]
 [dumpfile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/uprocessador_git/Lab7/tb.ghw"
-[dumpfile_mtime] "Mon Feb  3 23:11:16 2025"
-[dumpfile_size] 25497
+[dumpfile_mtime] "Thu Feb  6 00:11:57 2025"
+[dumpfile_size] 4191333
 [savefile] "/home/omar/Desktop/UTFPR_2024-2/arq_comp/uP/uprocessador_git/Lab7/tb/ondas.gtkw"
-[timestart] 1034000000
-[size] 1366 681
-[pos] 1890 282
-*-27.530367 1177400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[timestart] 977700000
+[size] 1920 993
+[pos] -30 -30
+*-27.530367 1374100000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.tb.
 [treeopen] top.tb.uut.
 [treeopen] top.tb.uut.instr_reg.
 [treeopen] top.tb.uut.pc_c.
+[treeopen] top.tb.uut.ram_c.
+[treeopen] top.tb.uut.regfile.
 [treeopen] top.tb.uut.rom_c.
 [treeopen] top.tb.uut.uc_c.
 [treeopen] top.tb.uut.ula_c.
@@ -47,7 +49,7 @@ top.tb.uut.pc_wr_s
 #{top.tb.uut.pc_c.data_out[11:0]} top.tb.uut.pc_c.data_out[11] top.tb.uut.pc_c.data_out[10] top.tb.uut.pc_c.data_out[9] top.tb.uut.pc_c.data_out[8] top.tb.uut.pc_c.data_out[7] top.tb.uut.pc_c.data_out[6] top.tb.uut.pc_c.data_out[5] top.tb.uut.pc_c.data_out[4] top.tb.uut.pc_c.data_out[3] top.tb.uut.pc_c.data_out[2] top.tb.uut.pc_c.data_out[1] top.tb.uut.pc_c.data_out[0]
 #{top.tb.uut.ir_out_s[18:0]} top.tb.uut.ir_out_s[18] top.tb.uut.ir_out_s[17] top.tb.uut.ir_out_s[16] top.tb.uut.ir_out_s[15] top.tb.uut.ir_out_s[14] top.tb.uut.ir_out_s[13] top.tb.uut.ir_out_s[12] top.tb.uut.ir_out_s[11] top.tb.uut.ir_out_s[10] top.tb.uut.ir_out_s[9] top.tb.uut.ir_out_s[8] top.tb.uut.ir_out_s[7] top.tb.uut.ir_out_s[6] top.tb.uut.ir_out_s[5] top.tb.uut.ir_out_s[4] top.tb.uut.ir_out_s[3] top.tb.uut.ir_out_s[2] top.tb.uut.ir_out_s[1] top.tb.uut.ir_out_s[0]
 #{top.tb.uut.ula_c.op_sel[1:0]} top.tb.uut.ula_c.op_sel[1] top.tb.uut.ula_c.op_sel[0]
-top.tb.uut.uc_c.alusrcb
+top.tb.uut.uc_c.alusrcb[0]
 @22
 #{top.tb.uut.pc_c.data_out[11:0]} top.tb.uut.pc_c.data_out[11] top.tb.uut.pc_c.data_out[10] top.tb.uut.pc_c.data_out[9] top.tb.uut.pc_c.data_out[8] top.tb.uut.pc_c.data_out[7] top.tb.uut.pc_c.data_out[6] top.tb.uut.pc_c.data_out[5] top.tb.uut.pc_c.data_out[4] top.tb.uut.pc_c.data_out[3] top.tb.uut.pc_c.data_out[2] top.tb.uut.pc_c.data_out[1] top.tb.uut.pc_c.data_out[0]
 #{top.tb.uut.ula_c.op_a[15:0]} top.tb.uut.ula_c.op_a[15] top.tb.uut.ula_c.op_a[14] top.tb.uut.ula_c.op_a[13] top.tb.uut.ula_c.op_a[12] top.tb.uut.ula_c.op_a[11] top.tb.uut.ula_c.op_a[10] top.tb.uut.ula_c.op_a[9] top.tb.uut.ula_c.op_a[8] top.tb.uut.ula_c.op_a[7] top.tb.uut.ula_c.op_a[6] top.tb.uut.ula_c.op_a[5] top.tb.uut.ula_c.op_a[4] top.tb.uut.ula_c.op_a[3] top.tb.uut.ula_c.op_a[2] top.tb.uut.ula_c.op_a[1] top.tb.uut.ula_c.op_a[0]
@@ -63,5 +65,11 @@ top.tb.uut.v_reg_s
 top.tb.uut.uc_c.flag_cond_s
 top.tb.uut.uc_c.pcwrcond_s
 #{top.tb.uut.reg_r0_s[2:0]} top.tb.uut.reg_r0_s[2] top.tb.uut.reg_r0_s[1] top.tb.uut.reg_r0_s[0]
+top.tb.uut.uc_c.wrdata_sel
+@22
+#{top.tb.uut.ram_c.data_out[15:0]} top.tb.uut.ram_c.data_out[15] top.tb.uut.ram_c.data_out[14] top.tb.uut.ram_c.data_out[13] top.tb.uut.ram_c.data_out[12] top.tb.uut.ram_c.data_out[11] top.tb.uut.ram_c.data_out[10] top.tb.uut.ram_c.data_out[9] top.tb.uut.ram_c.data_out[8] top.tb.uut.ram_c.data_out[7] top.tb.uut.ram_c.data_out[6] top.tb.uut.ram_c.data_out[5] top.tb.uut.ram_c.data_out[4] top.tb.uut.ram_c.data_out[3] top.tb.uut.ram_c.data_out[2] top.tb.uut.ram_c.data_out[1] top.tb.uut.ram_c.data_out[0]
+#{top.tb.uut.data_wr_s[15:0]} top.tb.uut.data_wr_s[15] top.tb.uut.data_wr_s[14] top.tb.uut.data_wr_s[13] top.tb.uut.data_wr_s[12] top.tb.uut.data_wr_s[11] top.tb.uut.data_wr_s[10] top.tb.uut.data_wr_s[9] top.tb.uut.data_wr_s[8] top.tb.uut.data_wr_s[7] top.tb.uut.data_wr_s[6] top.tb.uut.data_wr_s[5] top.tb.uut.data_wr_s[4] top.tb.uut.data_wr_s[3] top.tb.uut.data_wr_s[2] top.tb.uut.data_wr_s[1] top.tb.uut.data_wr_s[0]
+@23
+#{top.tb.uut.regfile.data_wr[15:0]} top.tb.uut.regfile.data_wr[15] top.tb.uut.regfile.data_wr[14] top.tb.uut.regfile.data_wr[13] top.tb.uut.regfile.data_wr[12] top.tb.uut.regfile.data_wr[11] top.tb.uut.regfile.data_wr[10] top.tb.uut.regfile.data_wr[9] top.tb.uut.regfile.data_wr[8] top.tb.uut.regfile.data_wr[7] top.tb.uut.regfile.data_wr[6] top.tb.uut.regfile.data_wr[5] top.tb.uut.regfile.data_wr[4] top.tb.uut.regfile.data_wr[3] top.tb.uut.regfile.data_wr[2] top.tb.uut.regfile.data_wr[1] top.tb.uut.regfile.data_wr[0]
 [pattern_trace] 1
 [pattern_trace] 0

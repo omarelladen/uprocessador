@@ -4,6 +4,7 @@ all:
 	ghdl -a tb/tb.vhd
 
 	ghdl -e ROM
+	ghdl -e RAM
 	ghdl -e UC
 	ghdl -e reg12bits
 	ghdl -e reg1bit

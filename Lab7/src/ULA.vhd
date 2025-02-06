@@ -4,9 +4,8 @@ use ieee.numeric_std.all;
 
 entity ULA is
    port(
-        op_a,op_b  :  in unsigned(15 downto 0);
-        op_sel :  in unsigned(1 downto 0);
-
+        op_a,op_b :  in unsigned(15 downto 0);
+        op_sel : in unsigned(1 downto 0);
         ula_out : out unsigned(15 downto 0);
         z, n, v : out std_logic
    );
