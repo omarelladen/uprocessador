@@ -36,7 +36,7 @@ begin
     
     sim_time_proc: process
     begin
-        wait for 50000 us;         -- TEMPO TOTAL DA SIMULACAO! => precisa tamanho da mem para nao passar do ultimo valor na sim
+        wait for 110 us;         -- TEMPO TOTAL DA SIMULACAO! => precisa tamanho da mem para nao passar do ultimo valor na sim
         finished <= '1';
         wait;
     end process sim_time_proc;

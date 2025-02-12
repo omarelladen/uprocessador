@@ -123,7 +123,7 @@ begin
                   '1' when addi_op='1' else --addi
                   '1' when sub_op ='1' else --sub
                   '1' when cmp_op ='1' else --cmp 
-                  '1' when cmpi_op='1' else --cmpi
+                  '1' when cmpi_op='1' and state_s="001" else --cmpi
                   '1' when mv_op  ='1' else --mv
                   '0';
 
