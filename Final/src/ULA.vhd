@@ -6,8 +6,8 @@ entity ULA is
     port(
         op_a,op_b :  in unsigned(15 downto 0);
         op_sel : in unsigned(1 downto 0);
-        ula_out : out unsigned(15 downto 0);
-        z, n, v : out std_logic
+        alu_out : out unsigned(15 downto 0);
+        z_flag, n_flag, v_flag : out std_logic
     );
 end entity;
 
@@ -21,26 +21,27 @@ port(
 );
 end component;
 
-signal sum, sub, bitwise_or, bitwise_and, ula_out_s: unsigned (15 downto 0);
+signal sum, sub, bitwise_or, bitwise_and, alu_out_s: unsigned (15 downto 0);
 
 begin
 
-    ula_out_s <= (op_a  +  op_b) when op_sel = "00" else
+    alu_out_s <= (op_a  +  op_b) when op_sel = "00" else
                  (op_a  -  op_b) when op_sel = "01" else
-                 (op_a or  op_b) when op_sel = "10" else -----manter ???????????????????????????????????????
-                 (op_a and op_b) when op_sel = "11" else -----manter ???????????????????????????????????????
+                 (op_a or  op_b) when op_sel = "10" else
+                 (op_a and op_b) when op_sel = "11" else
                  "0000000000000000"; 
 
     --zero
-    z <= '1' when ula_out_s = 0 else '0';
+    z_flag <= '1' when alu_out_s = 0 else
+              '0';
 
     --neg
-    n <= ula_out_s(15);
+    n_flag <= alu_out_s(15);
 
     --overflow
-    v <= '1' when (op_a(15) /= op_b(15)) and (op_a(15) /= ula_out_s(15)) else '0';
+    v_flag <= '1' when (op_a(15) /= op_b(15)) and (op_a(15) /= alu_out_s(15)) else
+              '0';
 
-
-    ula_out <= ula_out_s;
+    alu_out <= alu_out_s;
 
 end architecture;

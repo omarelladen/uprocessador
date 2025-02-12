@@ -29,20 +29,20 @@ begin
     reset_global: process
     begin
         rst <= '1';
-        wait for period_time*2; -- espera 2 clks, pra garantir
+        wait for period_time*2;      -- espera 2 clks, pra garantir
         rst <= '0';
         wait;
     end process;
     
     sim_time_proc: process
     begin
-        wait for 110 us;         -- TEMPO TOTAL DA SIMULACAO! => precisa tamanho da mem para nao passar do ultimo valor na sim
+        wait for 300 us;             -- TEMPO TOTAL DA SIMULACAO! => precisa mudar tamanho da mem para nao passar do ultimo valor na sim
         finished <= '1';
         wait;
     end process sim_time_proc;
 
     clk_proc: process
-    begin                       -- gera clk até que sim_time_proc termine
+    begin                            -- gera clk até que sim_time_proc termine
         while finished /= '1' loop
             clk <= '0';
             wait for period_time/2;
@@ -55,9 +55,9 @@ begin
 
     process
     begin
-		wait for period_time * 2; --espera 100ns
+		wait for period_time * 2;    --espera 100ns
 
-        wait for period_time; -- sinais mudam aqui a cada 50ns (na hora da borda de descida do clk)
+        wait for period_time;        -- sinais mudam aqui a cada 50ns (na hora da borda de descida do clk)
 
         wait;
 
