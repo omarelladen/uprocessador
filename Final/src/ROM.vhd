@@ -39,7 +39,7 @@ architecture a_ROM of ROM is
       16 => B"0101_001_000_000000_100", -- sw r0, r4      marca r4 como nao primo
       17 => B"0001_000_000000001101",   -- jump 13
       18 => B"0011_000_010_000000001",  -- addi r2, 1     vai para o prox num
-      19 => B"0011_010_000000000110",   -- cmpi r2, 6     verifica todos os nums ate 6 = floor(sqrt(36))
+      19 => B"0011_010_010_000000110",   -- cmpi r2, 6     verifica todos os nums ate 6 = floor(sqrt(36))
       20 => B"0100_000_111111110100",   -- ble -12
 
       -- MARCA O FIM DO CRIVO
