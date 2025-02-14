@@ -12,8 +12,8 @@
 --  'Comparacoes': 'Comparacao com CMPR ou CMPI',                    
 --  'Saltos condicionais': ['BLE', 'BLT'],                           
 --  'Saltos': 'Incondicional eh absoluto e condicional eh relativo',
---  'Validacao -- final do loop': 'Contador com INC',                
---  'Validacao -- complicacoes': 'A constante 1843 eh numero primo?'  
+--  'Validacao -- final do loop': 'Contador com INC',               
+--  'Validacao -- complicacoes': 'A constante 1843 eh numero primo?'
 -- }
 
 
@@ -238,6 +238,7 @@ begin
                   "0000000"    & (ir_out_s(8 downto 0)) when alu_src_b_sel_s="00" and ir_out_s(8)='0' else ---
                   "1111111111" & (ir_out_s(8 downto 3)) when alu_src_b_sel_s="01" and ir_out_s(8)='1' else --lw, sw -offset
                   "0000000000" & (ir_out_s(8 downto 3)) when alu_src_b_sel_s="01" and ir_out_s(8)='0' else ---
+                  "0000000000000001"                    when alu_src_b_sel_s="10" else                     --inc 
                   reg_b_out_s;
     
     wr_data_s <= ram_out_s when wr_data_sel_s='1' else
