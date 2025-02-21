@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity bin_to_bcd is
+    Port ( bin_in  : in  STD_LOGIC_VECTOR(7 downto 0);
+           bcd_out : out STD_LOGIC_VECTOR(11 downto 0)
+         );
+end entity;
+
+architecture a_bin_to_bcd of bin_to_bcd is
+    signal bin_value : unsigned(7 downto 0);
+    signal hundreds  : unsigned(3 downto 0);
+    signal tens      : unsigned(3 downto 0); 
+    signal ones      : unsigned(3 downto 0); 
+begin
+    bin_value <= unsigned(bin_in);
+
+    hundreds <= bin_value / 100;
+    tens <= (bin_value mod 100) / 10;
+    ones <= bin_value mod 10;
+
+    bcd_out <= std_logic_vector(hundreds & tens & ones);
+end architecture;
